@@ -1,0 +1,518 @@
+.enquiryformcontainer,
+.enquiry-form-container {
+  min-height: auto;
+  width: 100%;
+  padding: 54px 5%;
+  color: #f7f2ea;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(420px, 1.2fr);
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  background:
+    linear-gradient(90deg, rgba(255, 77, 0, 0.08), transparent 34%),
+    #050505;
+}
+
+.enquiryformcontainer h2,
+.enquiry-form-container h2 {
+  width: 100%;
+  max-width: 390px;
+  margin-bottom: 0;
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 700;
+  text-align: left;
+  background: transparent;
+}
+
+.enquiryformcontainer h2::after,
+.enquiry-form-container h2::after {
+  content: "Share a few details and we will plan the shoot around your story, date, and style.";
+  display: block;
+  margin-top: 14px;
+  color: rgba(247, 242, 234, 0.62);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.enquiry-form {
+  width: 100%;
+  max-width: 760px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.form-group,
+.form-group label,
+.error-text,
+.errot-text,
+.status-message {
+  background: transparent;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(247, 242, 234, 0.82);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group .react-datepicker-wrapper,
+.form-group .react-datepicker__input-container {
+  width: 100%;
+  background: transparent;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(247, 242, 234, 0.45);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #111111;
+  color: #ffffff;
+}
+
+.service-select {
+  position: relative;
+  width: 100%;
+  background: transparent;
+}
+
+.service-select__trigger {
+  width: 100%;
+  height: 43px;
+  padding: 0 16px 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.service-select__trigger:hover,
+.service-select__trigger:focus {
+  outline: none;
+  border-color: #ff6b35;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.14);
+}
+
+.service-select__trigger.error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.12);
+}
+
+.service-select__trigger span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.service-select__arrow {
+  color: rgba(247, 242, 234, 0.78);
+  font-size: 12px;
+  line-height: 1;
+  background: transparent;
+}
+
+.service-select__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: #151515;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.46);
+}
+
+.service-select__item {
+  width: 100%;
+  padding: 10px 13px;
+  border: none;
+  border-radius: 11px;
+  background: transparent;
+  color: rgba(247, 242, 234, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.service-select__item:hover {
+  background: rgba(255, 107, 53, 0.15);
+  color: #ffffff;
+}
+
+.service-select__item.is-selected {
+  background: linear-gradient(135deg, #ff4d00 0%, #ff8c42 100%);
+  color: #ffffff;
+}
+
+.calendar-input {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  min-height: 82px;
+  border-radius: 18px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-group:has(textarea) {
+  grid-column: 1 / -1;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.14);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.12);
+}
+
+.error-text,
+.errot-text {
+  display: block;
+  margin-top: 6px;
+  color: #ff9b9b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.enquiry-form button[type="submit"] {
+  grid-column: 1 / -1;
+  width: min(100%, 260px);
+  justify-self: center;
+  margin-top: 2px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff4d00 0%, #ff8c42 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(255, 77, 0, 0.22);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.enquiry-form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(255, 77, 0, 0.3);
+}
+
+.enquiry-form button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.status-message {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.status-message.success,
+.status-message.Success {
+  background: rgba(55, 181, 126, 0.14);
+  color: #8ef0bf;
+  border: 1px solid rgba(55, 181, 126, 0.35);
+}
+
+.status-message.error,
+.status-message.Error {
+  background: rgba(255, 107, 107, 0.14);
+  color: #ffb2b2;
+  border: 1px solid rgba(255, 107, 107, 0.35);
+}
+
+.status-message.loading,
+.status-message.Loading {
+  background: rgba(255, 176, 138, 0.14);
+  color: #ffcfb7;
+  border: 1px solid rgba(255, 176, 138, 0.32);
+}
+
+.client-calendar-popper,
+.client-calendar-popper * {
+  background: transparent;
+}
+
+.client-calendar-popper {
+  z-index: 20;
+}
+
+.client-calendar {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: #141414;
+  color: #f7f2ea;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
+  font-family: inherit;
+}
+
+.client-calendar .react-datepicker__triangle {
+  fill: #141414;
+  color: #141414;
+  stroke: rgba(255, 255, 255, 0.12);
+}
+
+.client-calendar .react-datepicker__header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1c1c1c;
+}
+
+.client-calendar__header {
+  display: grid;
+  grid-template-columns: 40px 110px 166px 40px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  background: transparent;
+}
+
+.client-calendar__nav {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.client-calendar__nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.client-calendar__select {
+  min-width: 0;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  background: transparent;
+}
+
+.client-calendar__select-trigger {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: #2a2a2a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.client-calendar__select-arrow {
+  color: rgba(247, 242, 234, 0.78);
+  font-size: 12px;
+  line-height: 1;
+  background: transparent;
+}
+
+.client-calendar__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 25;
+  width: 100%;
+  max-height: 238px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: #151515;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.46);
+}
+
+.client-calendar__select--month .client-calendar__menu {
+  width: 178px;
+}
+
+.client-calendar__menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.client-calendar__menu::-webkit-scrollbar-track {
+  background: #242424;
+  border-radius: 999px;
+}
+
+.client-calendar__menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 53, 0.72);
+  border-radius: 999px;
+}
+
+.client-calendar__menu-item {
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(247, 242, 234, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.client-calendar__menu-item:hover {
+  background: rgba(255, 107, 53, 0.15);
+  color: #ffffff;
+}
+
+.client-calendar__menu-item.is-selected {
+  background: linear-gradient(135deg, #ff4d00 0%, #ff8c42 100%);
+  color: #ffffff;
+}
+
+.client-calendar .react-datepicker__month-container,
+.client-calendar .react-datepicker__month,
+.client-calendar .react-datepicker__week,
+.client-calendar .react-datepicker__day-names {
+  background: #141414;
+}
+
+.client-calendar .react-datepicker__current-month {
+  display: none;
+}
+
+.client-calendar .react-datepicker__day-name {
+  width: 34px;
+  margin: 3px;
+  color: rgba(247, 242, 234, 0.58);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.client-calendar .react-datepicker__day {
+  width: 34px;
+  height: 34px;
+  margin: 3px;
+  border-radius: 10px;
+  color: #f7f2ea;
+  background: transparent;
+  line-height: 34px;
+}
+
+.client-calendar .react-datepicker__day:hover {
+  background: rgba(255, 107, 53, 0.16);
+  color: #ffffff;
+}
+
+.client-calendar .react-datepicker__day--selected,
+.client-calendar .react-datepicker__day--keyboard-selected {
+  background: linear-gradient(135deg, #ff4d00 0%, #ff8c42 100%);
+  color: #ffffff;
+}
+
+.client-calendar .react-datepicker__day--outside-month {
+  color: rgba(247, 242, 234, 0.28);
+}
+
+.client-calendar .react-datepicker__day--disabled {
+  color: rgba(247, 242, 234, 0.18);
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .enquiryformcontainer,
+  .enquiry-form-container {
+    padding: 38px 18px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .enquiryformcontainer h2,
+  .enquiry-form-container h2 {
+    max-width: none;
+    font-size: 34px;
+  }
+
+  .enquiryformcontainer h2::after,
+  .enquiry-form-container h2::after {
+    font-size: 15px;
+    margin-top: 12px;
+  }
+
+  .enquiry-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 13px;
+    border-radius: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 15px;
+  }
+}
