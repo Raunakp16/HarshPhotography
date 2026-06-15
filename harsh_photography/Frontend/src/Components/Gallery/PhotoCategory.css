@@ -1,0 +1,16 @@
+.category{
+    height: 30vh;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.category h1{
+    background-color: #1c1c1c;
+}
+.category p{
+    background-color: #1c1c1c;
+}

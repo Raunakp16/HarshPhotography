@@ -1,0 +1,21 @@
+.gallerynav{
+    height: 10vh;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.gallerynav h1{
+    background-color: #1c1c1c;
+}
+
+.link{
+    background-color: #1c1c1c;
+    color: white;
+    text-decoration: none;
+  
+   
+}
