@@ -19,7 +19,7 @@ const Home = () => {
     {
       id: 1,
       title: "Potriats",
-
+        category: "portraits",
       description:
         "Capturing timeless wedding moments with cinematic storytelling and elegant compositions.",
       image: girl,
@@ -27,7 +27,7 @@ const Home = () => {
     {
       id: 2,
       title: "Pre-Wedding",
-
+      category: "pre-wedding",
       description:
         "Capturing timeless wedding moments with cinematic storytelling and elegant compositions.",
       image: weddingimg,
@@ -35,7 +35,7 @@ const Home = () => {
     {
       id: 3,
       title: "Wedding",
-
+      category: "wedding",
       description:
         "Capturing timeless wedding moments with cinematic storytelling and elegant compositions.",
       image: weddingimg,
@@ -43,7 +43,7 @@ const Home = () => {
      {
       id: 4,
       title: "Babyshower",
-
+       category: "babyshower",
       description:
         "Capturing timeless wedding moments with cinematic storytelling and elegant compositions.",
       image: weddingimg,
@@ -59,15 +59,16 @@ const Home = () => {
       <Hero />
       <Cardinfo/>
       <div className="cards-container">
-      {carddetails.map(function (elem) {
-        return (
-         
-            <Card image={elem.image} title={elem.title}  key={elem.id} />
-           
-          
-         
-        );
-      })}
+     {carddetails.map((elem) => {
+  return (
+    <Card
+      image={elem.image}
+      title={elem.title}
+      category={elem.category}
+      key={elem.id}
+    />
+  );
+})}
       </div>
       <About/>
       <ClientForm/>

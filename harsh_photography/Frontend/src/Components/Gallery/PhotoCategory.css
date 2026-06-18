@@ -1,16 +1,24 @@
-.category{
-    height: 30vh;
-    width: 100%;
-    background-color: #1c1c1c;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.category {
+  text-align: center;
+  padding: 20px;
 }
 
-.category h1{
-    background-color: #1c1c1c;
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 20px;
 }
-.category p{
-    background-color: #1c1c1c;
+
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;   /* Square cards like Instagram */
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.03);
 }

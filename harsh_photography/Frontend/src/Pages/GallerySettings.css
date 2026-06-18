@@ -1,0 +1,156 @@
+.gallery-settings {
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,120,50,0.08) 0%,
+      rgba(0,0,0,0.95) 35%,
+      rgba(255,100,0,0.18) 100%
+    );
+}
+
+.gallerySettingNavbar{
+    width:100%;
+    height: 10vh;
+    margin-bottom: 20px;
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 30px;
+}
+ .link {
+     min-height: 42px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+ }
+ .link a {
+  color: white;
+  text-decoration: none;
+}
+.gallery-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.category-sidebar {
+  width: 250px;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(255, 120, 50, 0.08);
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+}
+.category-sidebar h3{
+    background: rgba(0, 0, 0, 0.05);;
+    font-size: 25px;
+}
+
+.category-sidebar button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color:#fff
+
+}
+
+.gallery-content {
+  flex: 1;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(255, 120, 50, 0.08);
+}
+.gallery-content h3{
+    background: #111;
+    font-size: 25px;}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-card {
+  height: 180px;
+  background: #333;
+  border-radius: 10px;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.delete-icon{
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: black;
+
+    color: rgb(197, 150, 150);
+
+    transition: 0.3s;
+}
+.delete-icon:hover{
+    background: black;
+
+    color: red;
+
+    transform: scale(1.1);
+}

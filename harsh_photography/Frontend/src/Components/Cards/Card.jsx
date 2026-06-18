@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 import "./Card.css";
 
-const Card = ({ image, title }) => {
+const Card = ({ image, title, category }) => {
+  console.log("CARD CATEGORY:", category);
   return (
   
      
@@ -12,7 +13,7 @@ const Card = ({ image, title }) => {
           <img src={image} alt="" />
           <div className="label">
             <h2>{title}</h2>
-            <Link to="/gallery" className="view-btn">
+            <Link to={`/gallery/${category}`} className="view-btn">
               View More <ArrowRight size={12} />
             </Link>
        </div>

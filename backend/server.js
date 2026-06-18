@@ -11,14 +11,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api",galleryRoutes);
+
+// FIXED
+app.use("/api/gallery", galleryRoutes);
+app.use("/api/enquiry", contactRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected successfully ✅"))
   .catch((err) => console.log(err));
-
-app.use("/api/enquiry", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 
