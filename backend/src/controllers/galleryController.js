@@ -119,9 +119,31 @@ const getGalleryByCategory = async (req, res) => {
 };
 
 // ============================
+// GET ALL CATEGORIES
+// ============================
+
+const getCategories = async (req,res) => {
+  try{
+     const categories = await Gallery.find({}, "category");
+     return res.status(200).json({
+      success: true,
+      data: categories
+     })
+  }
+  catch(error){
+    console.error("Category Fetch Error:", error);
+    return res .status(500).json({
+      success:false,
+      message:error.message
+    })
+  }
+}
+
+// ============================
 // EXPORTS
 // ============================
 module.exports = {
   uploadGallery,
   getGalleryByCategory,
+  getCategories
 };

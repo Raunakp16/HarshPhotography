@@ -1,8 +1,43 @@
 import "./GallerySettings.css";
 import { Link } from "react-router-dom";
 import { Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const GallerySettings = () => {
+  const fetchCategories = async () => {
+    try{
+      const response = await axios.get("http://localhost:5000/api/gallery/categories");
+      setCategories(response.data.data);
+      console.log("Categories fetched:", response.data);
+      
+    }
+    catch(error){
+      console.error("Error fetching categories:",error);
+    }
+  }
+
+  const fetchImages = async (category) => {
+    try{
+      const response = await axios.get(`http://localhost:5000/api/gallery/${category}`);
+      console.log(response.data.data);
+       setImages(response.data.data.images);
+        console.log("Images fetched:", response.data);
+    }
+    catch(error){
+      console.error("Error fetching images:",error);
+    }
+  }
+
+  const [categories, setCategories] = useState([]);
+  const [images, setImages] = useState([]);
+
+  useEffect(() =>{
+    fetchCategories();
+  },[])
+  
+  console.log(categories);
+  console.log(images);
   return (
     <div className="gallery-settings">
       <div className="gallerySettingNavbar">
@@ -16,42 +51,38 @@ const GallerySettings = () => {
         <div className="category-sidebar">
           <h3>Categories</h3>
 
-          <button>Wedding</button>
-          <button>Pre Wedding</button>
-          <button>Portraits</button>
-          <button>Baby Shower</button>
+         {
+          categories.map((item) => (
+            <button key={item._id} onClick={() => fetchImages(item.category)}>
+              {item.category}
+            </button>
+          ))
+         }
         </div>
 
         <div className="gallery-content">
-          <h3>Images</h3>
+  <h3>Images</h3>
 
-          <div className="image-grid">
-            <div className="image-card">
-              <button className="delete-icon">
-                <Trash2 size={20} />
-              </button>
-              Image
-            </div>
-            <div className="image-card">
-                <button className="delete-icon">
-                <Trash2 size={20} />
-              </button>
-                Image
-                </div>
-            <div className="image-card">
-                <button className="delete-icon">
-                <Trash2 size={20} />
-              </button>
-                Image
-                </div>
-            <div className="image-card">
-                <button className="delete-icon">
-                <Trash2 size={20} />
-              </button>
-                Image
-            </div>
-          </div>
+  <div className="image-grid">
+    {
+      images.map((img) => (
+        <div
+          key={img.public_id}
+          className="image-card"
+        >
+          <button className="delete-icon">
+            <Trash2 size={20} />
+          </button>
+
+          <img
+            src={img.url}
+            alt=""
+          />
         </div>
+      ))
+    }
+  </div>
+</div>
       </div>
     </div>
   );

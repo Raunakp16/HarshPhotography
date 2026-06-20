@@ -7,7 +7,8 @@ const upload = require("../middleware/multer");
 
 const {
   uploadGallery,
-  getGalleryByCategory
+  getGalleryByCategory,
+  getCategories
 } = require("../controllers/galleryController");
 
 // TEST ROUTE
@@ -26,11 +27,19 @@ router.post(
   uploadGallery
 );
 
+// GET ALL CATEGORIES ROUTE
+router.get("/categories", (req,res,next) =>{
+  console.log(" GET CATEGORIES ROUTE HIT");
+  next();
+}, getCategories);
+
 // CATEGORY ROUTE
 router.get("/:category", (req, res, next) => {
   console.log("🔥 CATEGORY ROUTE HIT");
   console.log("PARAMS:", req.params);
   next();
 }, getGalleryByCategory);
+
+
 
 module.exports = router;
