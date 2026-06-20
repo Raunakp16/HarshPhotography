@@ -29,6 +29,26 @@ const GallerySettings = () => {
     }
   }
 
+ const deleteImage = async (publicId) => {
+  // 1. instantly remove from UI (FAST FEEL)
+  setImages((prev) =>
+    prev.filter((img) => img.public_id !== publicId)
+  );
+
+  try {
+    // 2. send request in background
+    await axios.delete(
+      `http://localhost:5000/api/gallery/delete/${encodeURIComponent(publicId)}`
+    );
+
+  } catch (error) {
+    console.error("Delete failed:", error);
+
+    // 3. rollback if something fails
+    fetchImages(); // or restore state
+  }
+};
+
   const [categories, setCategories] = useState([]);
   const [images, setImages] = useState([]);
 
@@ -70,7 +90,7 @@ const GallerySettings = () => {
           key={img.public_id}
           className="image-card"
         >
-          <button className="delete-icon">
+          <button className="delete-icon" onClick={() => deleteImage(img.public_id)}>
             <Trash2 size={20} />
           </button>
 

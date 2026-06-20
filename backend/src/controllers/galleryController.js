@@ -1,6 +1,7 @@
 const Gallery = require("../models/gallerySchema");
 const cloudinary = require("../config/cloudinary");
 const fs = require("fs");
+const cloudinaryConfig = require("../config/cloudinary");
 
 // ============================
 // UPLOAD GALLERY IMAGES
@@ -140,10 +141,61 @@ const getCategories = async (req,res) => {
 }
 
 // ============================
+// DELETE GALLERY IMAGE
+// ============================
+
+const deleteGalleryImage = async (req, res) => {
+  try {
+    const { publicId } = req.params;
+
+    console.log("🔥 Deleting image:", publicId);
+
+    const cloudinaryResponse = await cloudinary.uploader.destroy(publicId);
+
+    const gallery = await Gallery.findOne({
+      "images.public_id": publicId,
+    });
+
+    // ⚠️ MUST check BEFORE ANY ACCESS
+    if (!gallery) {
+      return res.status(200).json({
+        success: true,
+        message: "Already deleted or not found in DB",
+        cloudinary: cloudinaryResponse,
+      });
+    }
+
+    // safe logging AFTER null check
+    console.log("Before:", gallery.images.length);
+
+    gallery.images = gallery.images.filter(
+      (img) => img.public_id !== publicId
+    );
+
+    await gallery.save();
+
+    console.log("After:", gallery.images.length);
+
+    return res.status(200).json({
+      success: true,
+      message: "Deleted successfully",
+    });
+
+  } catch (error) {
+    console.error("Delete error:", error);
+
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+// ============================
 // EXPORTS
 // ============================
 module.exports = {
   uploadGallery,
   getGalleryByCategory,
-  getCategories
+  getCategories,
+  deleteGalleryImage
 };

@@ -39,7 +39,7 @@ const Footerbar = () => {
         <div className="logs">
           <p> &copy; 2026 Harsh Photography. All rights reserved.</p> &nbsp;<br />
 
-          <p class="developer-credit">
+          <p className="developer-credit">
   Website designed & developed by Raunak 
   </p>
         </div>

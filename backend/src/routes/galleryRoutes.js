@@ -8,7 +8,8 @@ const upload = require("../middleware/multer");
 const {
   uploadGallery,
   getGalleryByCategory,
-  getCategories
+  getCategories,
+  deleteGalleryImage
 } = require("../controllers/galleryController");
 
 // TEST ROUTE
@@ -33,13 +34,19 @@ router.get("/categories", (req,res,next) =>{
   next();
 }, getCategories);
 
+
+// DELETE IMAGE ROUTE
+router.delete("/delete/:publicId", (req,res,next) =>{
+  console.log("🔥 DELETE IMAGE ROUTE HIT");
+  console.log("PARAMS:", req.params);
+  next();
+}, deleteGalleryImage);
 // CATEGORY ROUTE
 router.get("/:category", (req, res, next) => {
   console.log("🔥 CATEGORY ROUTE HIT");
   console.log("PARAMS:", req.params);
   next();
 }, getGalleryByCategory);
-
 
 
 module.exports = router;
