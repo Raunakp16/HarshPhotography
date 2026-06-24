@@ -10,6 +10,7 @@ const Gallery = () => {
 
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedImage,setSelectedImage]=useState(null)
 
   useEffect(() => {
     const fetchGallery = async () => {
@@ -52,6 +53,8 @@ const Gallery = () => {
         images={images}
         loading={loading}
         category={category || "Unknown Category"}
+        selectedImage={selectedImage}
+        setSelectedImage={setSelectedImage}
       />
     </div>
   );
