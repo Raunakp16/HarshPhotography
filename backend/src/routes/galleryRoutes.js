@@ -9,7 +9,8 @@ const {
   uploadGallery,
   getGalleryByCategory,
   getCategories,
-  deleteGalleryImage
+  deleteGalleryImage,
+  verifySecret
 } = require("../controllers/galleryController");
 
 // TEST ROUTE

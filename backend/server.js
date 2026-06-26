@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const contactRoutes = require("./src/routes/contactRoutes");
 const galleryRoutes = require("./src/routes/galleryRoutes");
+const adminRoutes = require("./src/routes/adminRoutes")
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // FIXED
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/enquiry", contactRoutes);
+app.use("/api/admin",adminRoutes)
 
 mongoose
   .connect(process.env.MONGO_URI)

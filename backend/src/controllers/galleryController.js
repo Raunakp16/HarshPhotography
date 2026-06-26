@@ -190,6 +190,9 @@ const deleteGalleryImage = async (req, res) => {
     });
   }
 };
+
+
+
 // ============================
 // EXPORTS
 // ============================
@@ -197,5 +200,5 @@ module.exports = {
   uploadGallery,
   getGalleryByCategory,
   getCategories,
-  deleteGalleryImage
+  deleteGalleryImage,
 };
